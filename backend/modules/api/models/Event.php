@@ -28,9 +28,9 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'cookie_Id', 'referrer', 'createdAt'], 'required'],
-            [['createdAt'], 'safe'],
-            [['name', 'cookie_Id', 'referrer'], 'string', 'max' => 100],
+            [['name', 'referrer'], 'required'],
+            
+            [['name', 'referrer'], 'string', 'max' => 100],
         ];
     }
     public function scenarios(){
