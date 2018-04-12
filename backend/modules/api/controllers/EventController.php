@@ -75,13 +75,13 @@ public function  actionListEvent(){
 
 public function  actionDashboard(){
     \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-     $event = Event::find()->all();
+     $event = Event::find();
      
      
      
      
      if(count($event)>0){
-         return array('status' =>TRUE,'data'=>$event);
+     return array('status' =>TRUE,'data'=> [$event->count(),$event]);
          
      }else{
          return array ('status' =>FALSE,'data' => 'No events found');
