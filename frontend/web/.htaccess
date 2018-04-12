@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Serve existing files
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+# Otherwise use front controller
+RewriteRule . index.php 
